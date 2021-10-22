@@ -1,6 +1,6 @@
 {
   "homepage": "https://CrytoWeb/",
-  "name": "my-website",
+  "name": "cryto-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
