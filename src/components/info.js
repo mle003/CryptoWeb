@@ -13,12 +13,10 @@ const Info = () => {
   const ws = useRef(null)
   const ws2 = useRef(null)
   const ws3 = useRef(null)
-  const ws4 = useRef(null)
   let first = useRef(false);
 
   useEffect(() => {
     ws3.current = new WebSocket("wss://ws-feed.pro.coinbase.com");
-    // first.current = true
   }, [])
 
   useEffect(() => {
@@ -116,14 +114,14 @@ const Info = () => {
 
   return (
     <div>
-      <select onChange={(e) => setCurrentCur(e.target.value)}>
+      <select className='block mx-auto mt-20 text-xl' onChange={(e) => setCurrentCur(e.target.value)}>
         <option value='' disabled selected>Choose a currency</option>
         <option value='btc'>Bitcoin</option>
         <option value='eth'>Etherum</option>
       </select>
       {currentCur !== '' && (
-        <div>
-          <table>
+        <div className='flex justify-center flex-col'>
+          <table className='block mx-auto mt-8 text-xl '>
             <tr>
               <th></th>
               <th>Binance</th>
@@ -141,14 +139,14 @@ const Info = () => {
             </tr>
           </table>
           {currentCur === 'btc' ? (
-            <div>
-              <p>Recommended to ask: {bnBtcAsk > cbBtcAsk ? 'Binance' : 'Coinbase'}</p>
-              <p>Recommended to bid: {bnBtcBid > cbBtcBid ? 'Binance' : 'Coinbase'}</p>
+            <div className='mt-3'>
+              <p className='text-center text-xl'>Recommended to ask: {bnBtcAsk > cbBtcAsk ? 'Binance' : 'Coinbase'}</p>
+              <p className='text-center text-xl'>Recommended to bid: {bnBtcBid > cbBtcBid ? 'Binance' : 'Coinbase'}</p>
             </div>
           ) : (
-            <div>
-              <p>Recommended to ask: {bnEthAsk > cbEthAsk ? 'Binance' : 'Coinbase'}</p>
-              <p>Recommended to bid: {bnEthBid > cbEthBid ? 'Binance' : 'Coinbase'}</p>
+            <div className='mt-3'>
+              <p className='text-center text-xl'>Recommended to ask: {bnEthAsk > cbEthAsk ? 'Binance' : 'Coinbase'}</p>
+              <p className='text-center text-xl'>Recommended to bid: {bnEthBid > cbEthBid ? 'Binance' : 'Coinbase'}</p>
             </div>
           )}
         </div>

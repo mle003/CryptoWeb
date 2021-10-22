@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+select {
+    border: 1px solid black;
+    padding: 3px;
+}
