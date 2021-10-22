@@ -6,6 +6,8 @@ run these commands in the terminal
 * Run in local host: yarn start
 * Deploy: yarn deploy
 
+Currently, I do not have github pro so I cannot deploy this app since I already deploy my personal website
+
 
 
 ## Questionnaire:
